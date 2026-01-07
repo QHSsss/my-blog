@@ -1,0 +1,389 @@
+---
+description: 文章 frontmatter 完整配置参数说明,包含所有可用的配置项和详细注释
+title: 📝 文章配置完整参数
+readingTime: true
+tag:
+ - 配置
+ - 文档
+recommend: 1
+top: 1
+---
+
+# 文章 Frontmatter 完整配置
+
+> 本文档包含了 @sugarat/theme 主题所有可用的 frontmatter 配置参数,复制需要的部分到你的文章即可。
+
+## 完整配置模板
+
+```yaml
+---
+# ===========================
+# 基础信息配置
+# ===========================
+
+# 文章标题(不配置则使用一级标题)
+title: 文章标题
+
+# 文章描述/摘要(显示在列表页、搜索结果、SEO)
+description: 这里是文章的简短描述,建议50-150字符
+
+# HTML格式的描述(优先级高于 description,通常不推荐使用)
+# descriptionHTML: '<span style="color:red;">HTML格式的描述</span>'
+
+# 文章作者(不配置则使用全局配置的作者)
+author: 作者名称
+
+# 文章发布时间(不配置则使用文件创建时间)
+# 格式: YYYY-MM-DD 或 YYYY-MM-DD HH:mm:ss
+date: 2024-01-01
+
+# 文章最后更新时间
+# lastUpdated: 2024-01-02
+
+# ===========================
+# 显示控制
+# ===========================
+
+# 是否隐藏文章(隐藏后不会在列表页显示,但可以通过链接访问)
+hidden: false
+
+# 是否在时间线中显示
+timeline: true
+
+# 是否显示文章封面图(在列表页显示)
+# cover: https://img.example.com/cover.jpg
+
+# 是否显示文章页的封面图
+# hiddenCover: false
+
+# 是否在列表页展示
+publish: true
+
+# ===========================
+# 布局配置
+# ===========================
+
+# 页面布局类型
+# - doc: 文档布局(默认,带侧边栏)
+# - home: 首页布局
+# - page: 纯净布局(无侧边栏)
+# - custom: 自定义布局
+layout: doc
+
+# 是否显示侧边栏(右侧目录导航)
+sidebar: true
+
+# 是否显示大纲(文章标题导航)
+outline: [2, 3]  # 显示 h2 和 h3 标题,也可以设置为 false
+
+# 自定义大纲标题
+# outlineTitle: 本页目录
+
+# ===========================
+# 标签和分类
+# ===========================
+
+# 文章标签(可以是字符串或数组)
+tag:
+ - 标签1
+ - 标签2
+ - 标签3
+
+# 或者单个标签
+# tag: 单个标签
+
+# 文章分类(可选)
+categories:
+ - 分类1
+ - 分类2
+
+# ===========================
+# 推荐和排序
+# ===========================
+
+# 推荐等级(数字越大越靠前,在推荐列表中显示)
+recommend: 5
+
+# 置顶权重(数字越大越靠前)
+sticky: 999
+
+# 首页置顶优先级
+top: 10
+
+# 文章排序权重(用于自定义排序)
+# sort: 100
+
+# ===========================
+# 阅读信息
+# ===========================
+
+# 是否显示预计阅读时间
+readingTime: true
+
+# 是否显示文章字数统计
+# wordCount: true
+
+# 文章阅读量(需要配合评论系统)
+# views: 1000
+
+# ===========================
+# 评论配置
+# ===========================
+
+# 是否显示评论区
+comment: true
+
+# 评论系统配置(覆盖全局配置)
+# commentConfig:
+#   type: giscus
+#   options:
+#     repo: 用户名/仓库名
+#     repoId: xxx
+#     category: Announcements
+#     categoryId: xxx
+
+# ===========================
+# SEO 优化
+# ===========================
+
+# 文章关键词(用于 SEO)
+keywords:
+ - 关键词1
+ - 关键词2
+
+# Open Graph 图片(社交媒体分享时显示的图片)
+# ogImage: https://img.example.com/og-image.jpg
+
+# ===========================
+# 按钮和跳转
+# ===========================
+
+# 文章底部的 "编辑此页" 链接
+# editLink: true
+
+# 上一篇/下一篇导航
+# prev:
+#   text: 上一篇文章标题
+#   link: /path/to/prev
+# next:
+#   text: 下一篇文章标题
+#   link: /path/to/next
+
+# ===========================
+# 特殊功能
+# ===========================
+
+# 是否启用数学公式支持(需要安装插件)
+# math: true
+
+# 是否启用 Mermaid 图表支持
+# mermaid: true
+
+# 文章头部添加徽章
+# badges:
+#   - text: 原创
+#     type: tip
+#   - text: 精选
+#     type: warning
+
+# 文章过期提醒(单位:天)
+# expired: 365
+
+# 友链信息(如果是友链页面)
+# friend:
+#   - nickname: 友链名称
+#     des: 友链描述
+#     avatar: https://avatar.url
+#     url: https://website.url
+
+# ===========================
+# 自定义配置
+# ===========================
+
+# 自定义 CSS 类名
+# pageClass: custom-page-class
+
+# 自定义前置脚本
+# head:
+#   - - meta
+#     - name: custom-meta
+#       content: custom-value
+
+---
+
+# 文章标题
+
+文章内容从这里开始...
+```
+
+## 常用配置组合
+
+### 1. 普通博客文章
+
+```yaml
+---
+title: 我的第一篇博客
+description: 这是一篇关于 Vue 3 学习心得的文章
+date: 2024-01-01
+tag:
+ - Vue3
+ - 前端
+recommend: 3
+---
+```
+
+### 2. 置顶推荐文章
+
+```yaml
+---
+title: 重要公告
+description: 博客重要更新通知
+sticky: 999
+top: 10
+tag:
+ - 公告
+readingTime: false
+---
+```
+
+### 3. 隐藏文章(草稿)
+
+```yaml
+---
+title: 未完成的文章
+description: 这篇文章还在编写中
+hidden: true
+publish: false
+---
+```
+
+### 4. 简洁页面(无侧边栏)
+
+```yaml
+---
+title: 关于我
+layout: page
+sidebar: false
+outline: false
+comment: false
+---
+```
+
+### 5. 技术文档
+
+```yaml
+---
+title: Vue 3 API 参考
+description: Vue 3 Composition API 完整参考手册
+tag:
+ - Vue3
+ - 文档
+sidebar: true
+outline: [2, 4]
+readingTime: true
+comment: true
+---
+```
+
+### 6. 友链页面
+
+```yaml
+---
+title: 友情链接
+layout: page
+sidebar: false
+comment: false
+---
+```
+
+## 配置优先级说明
+
+1. **文章 frontmatter** > **全局配置** > **主题默认配置**
+2. `descriptionHTML` > `description`
+3. `title` > 一级标题 `# 标题`
+4. 文章中的 `author` > 全局配置的 `author`
+
+## 注意事项
+
+### ✅ 推荐做法
+
+- 每篇文章至少配置 `title` 和 `description`
+- 使用 `tag` 进行分类管理
+- 重要文章使用 `recommend` 或 `sticky` 提高权重
+- 合理使用 `readingTime` 提升用户体验
+
+### ❌ 避免的做法
+
+- 不要同时使用 `description` 和 `descriptionHTML`(除非你确实需要 HTML)
+- 不要设置过多的 `tag`(建议 1-5 个)
+- 不要滥用 `sticky` 和 `top`(会导致所有文章都置顶)
+- 避免在 `description` 中使用换行符
+
+## 配置生效说明
+
+- **立即生效**: `hidden`、`publish`、`layout` 等
+- **需要重启**: 大部分配置修改后需要重启开发服务器
+  ```bash
+  # Ctrl+C 停止服务
+  pnpm dev  # 重新启动
+  ```
+- **需要清除缓存**: 如果修改后不生效,尝试清除浏览器缓存(`Ctrl+Shift+R`)
+
+## 完整示例文章
+
+```markdown
+---
+title: Vue 3 响应式原理深度解析
+description: 深入理解 Vue 3 响应式系统的实现原理,包括 Proxy、effect、reactive 等核心 API 的源码分析
+date: 2024-01-15
+author: 张三
+tag:
+ - Vue3
+ - 源码分析
+ - 响应式
+categories:
+ - 前端技术
+ - 框架原理
+recommend: 5
+sticky: 100
+readingTime: true
+sidebar: true
+outline: [2, 3]
+comment: true
+keywords:
+ - Vue3响应式
+ - Proxy
+ - effect
+ - reactive
+---
+
+# Vue 3 响应式原理深度解析
+
+## 前言
+
+Vue 3 的响应式系统是基于 Proxy 实现的...
+
+## 核心概念
+
+### reactive
+
+响应式对象的创建...
+
+### effect
+
+副作用函数的执行...
+
+## 源码分析
+
+详细的源码分析内容...
+
+## 总结
+
+通过本文的学习,我们了解了...
+```
+
+## 相关链接
+
+- [主题官方文档](https://theme.sugarat.top)
+- [VitePress Frontmatter 配置](https://vitepress.dev/reference/frontmatter-config)
+- [全局配置文档](./global-config.md)

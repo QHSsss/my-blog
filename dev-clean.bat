@@ -1,0 +1,6 @@
+@echo off
+echo 正在清除缓存...
+rmdir /s /q docs\.vitepress\cache 2>nul
+echo 缓存已清除！
+echo 正在启动开发服务器...
+call pnpm dev
