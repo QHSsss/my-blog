@@ -1,0 +1,47 @@
+.VPHome {
+  // 定义遮罩样式
+  background: radial-gradient(
+    ellipse,
+    rgba(var(--bg-gradient-home), 0.53) 0%,
+    rgba(var(--bg-gradient-home), 0) 2000%
+  );
+
+  // 自定义首页背景图
+  &::before {
+    background-size: cover;
+    // 默认是暗色模式的背景
+    background-image: url(/images/bg.webp);
+  }
+}
+
+// 亮色模式下切换背景
+html:not(.dark) .VPHome::before {
+  background-image: url(/images/bgw.webp);
+}
+
+.blog-item .pin.pin::before {
+  // 修改颜色
+  background-image: linear-gradient(#1e90ff, #1e90ff);
+}
+
+/* 友链描述支持多行 */
+.friend-list li .des {
+  white-space: pre-wrap !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.4 !important;
+  height: auto !important;
+  overflow: hidden !important;
+  font-size: 13px !important;
+}
+
+/* 增加间距，让文字靠右一点 */
+.friend-list li .info-wrapper {
+  padding-left: 16px !important;
+}
+
+.friend-list li {
+  padding: 0 4px !important;
+}
