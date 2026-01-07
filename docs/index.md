@@ -2,7 +2,7 @@
 layout: home
 # 首页部分元素定制
 blog:
-  name: "没事人的小屋11"
+  name: "没事人的小屋"
   motto: 请叫我徐弈伦
   inspiring:
     - 有些仗全力亦打不上，遗憾才是常态

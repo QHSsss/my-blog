@@ -2,7 +2,7 @@
  * @sugarat/theme 博客主题配置文件
  *
  * 所有配置项详见文档: https://theme.sugarat.top/
- * 配置说明文档: docs/sop/global-config.md
+ * 配置说明文档: docs/config/global-config.md
  */
 
 import { getThemeConfig } from '@sugarat/theme/node'
