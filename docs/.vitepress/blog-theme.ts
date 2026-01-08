@@ -80,7 +80,7 @@ const blogTheme = getThemeConfig({
     {
       nickname: "LINUX DO",
       des: "真诚、友善、团结、专业，\n共建你我引以为荣之社区。",
-      avatar: "/images/linuxdo.png",
+      avatar: "/images/linuxdo.webp",
       url: "https://linux.do/",
     },
     // 添加更多友链...
@@ -124,7 +124,7 @@ const blogTheme = getThemeConfig({
       { type: "text", content: "👇公众号👇---👇 微信 👇" },
       {
         type: "image",
-        src: "/images/qr.jpg",
+        src: "/images/qr.webp",
       },
     ],
     footer: [
