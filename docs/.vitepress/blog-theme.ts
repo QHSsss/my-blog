@@ -7,7 +7,7 @@
 import { getThemeConfig } from "@sugarat/theme/node"
 import type { Theme } from "@sugarat/theme"
 
-const baseUrl = "https://xgood.xz.cn" // 修改为你的站点域名
+const baseUrl = "https://www.xgood.xz.cn" // 修改为你的站点域名
 
 // RSS订阅配置
 const RSS: Theme.RSSOptions = {
@@ -15,8 +15,8 @@ const RSS: Theme.RSSOptions = {
   baseUrl,
   description: "没事人的小屋，不开心就不开心，也别勉强的慰问",
   language: "zh-cn",
-  image: "https://xgood.xz.cn/logo.png",
-  favicon: "https://xgood.xz.cn/favicon.ico",
+  image: "https://www.xgood.xz.cn/logo.png",
+  favicon: "https://www.xgood.xz.cn/favicon.ico",
   copyright: "Copyright (c) 没事人",
   url: `${baseUrl}/feed.rss`,
 }
@@ -89,7 +89,7 @@ const blogTheme = getThemeConfig({
   authorList: [
     {
       nickname: "没事人",
-      url: "https://xgood.xz.cn/aboutme.html",
+      url: "https://www.xgood.xz.cn/aboutme.html",
       des: "You Are Good. Just Be Yourself.",
     },
   ],
@@ -134,7 +134,7 @@ const blogTheme = getThemeConfig({
       // },
       {
         type: "button",
-        link: "https://xgood.xz.cn/aboutme.html",
+        link: "https://www.xgood.xz.cn/aboutme.html",
         content: "关于作者",
         // props: {
         //   type: "default",
