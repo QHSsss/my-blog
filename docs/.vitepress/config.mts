@@ -29,13 +29,14 @@ export default defineConfig({
       "script",
       {},
       `
-      ;(() => {
-        const saved = localStorage.getItem('vitepress-theme-appearance')
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-        if (saved === 'dark' || (!saved && prefersDark)) {
-          document.documentElement.classList.add('dark')
-        }
-      })()
+        ;(() => {
+          const saved = localStorage.getItem('vitepress-theme-appearance')
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+          if (saved === 'dark' || (saved === 'auto' && prefersDark)) {
+            document.documentElement.classList.add('dark')
+          }
+        })()
       `,
     ],
   ],
