@@ -1,22 +1,92 @@
 .VPHome {
-  // 定义遮罩样式
+  // 暗色模式遮罩样式
   background: radial-gradient(
     ellipse,
     rgba(var(--bg-gradient-home), 0.53) 0%,
-    rgba(var(--bg-gradient-home), 0) 2000%
+    rgba(var(--bg-gradient-home), 0) 1000%
   );
 
   // 自定义首页背景图
   &::before {
     background-size: cover;
     // 默认是暗色模式的背景
-    background-image: url(/images/bg.webp);
+    background-image: url(/images/bgw.jpg);
   }
 }
 
-// 亮色模式下切换背景
-html:not(.dark) .VPHome::before {
-  background-image: url(/images/bgw.webp);
+// 亮色模式下的样式调整
+html:not(.dark) .VPHome {
+  // 亮色模式专用遮罩 - 使用白色半透明渐变，让背景图更柔和
+  background: radial-gradient(
+    ellipse at top,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.45) 30%,
+    rgba(255, 255, 255, 0.2) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  // 切换到亮色背景图
+  &::before {
+    background-image: url(/images/3.webp);
+  }
+
+  .blog-item,
+  .blog-info-wrapper .card {
+    background-color: rgba(255, 255, 255, 0.1); // 25%不透明度，很透明
+    backdrop-filter: blur(2px); // 强模糊补偿透明度
+    // -webkit-backdrop-filter: blur(2px); // Safari兼容
+  }
+
+  .info-container {
+    .title {
+      color: #000;
+    }
+    .description {
+      color: #1a1a1a; // 亮色模式下描述文字颜色调整
+    }
+    .badge-list {
+      color: #2c2c2c;
+    }
+  }
+
+  .overview-data .overview-item {
+    .count {
+      color: #000;
+    }
+    .label {
+      color: #1a1a1a;
+    }
+  }
+
+  .blog-author {
+    color: #000;
+  }
+
+  .card {
+    .card-header {
+      color: #000;
+    }
+
+    .des {
+      .title {
+        color: #000;
+      }
+      .tag {
+        color: #1a1a1a;
+      }
+    }
+
+    .friend-list {
+      .info-wrapper {
+        .nickname {
+          color: #000;
+        }
+        .des {
+          color: #1a1a1a;
+        }
+      }
+    }
+  }
 }
 
 .blog-item .pin.pin::before {
